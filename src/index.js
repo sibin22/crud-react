@@ -5,12 +5,19 @@ import reportWebVitals from "./reportWebVitals";
 import { Form } from "./components/form";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Chat from "./components/chat";
+import VideoCall from "./components/videoCall";
+// import { configureStore } from "@reduxjs/toolkit";
+// import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+// const store = configureStore();
 root.render(
-  <React.StrictMode>
-    <Form />
-  </React.StrictMode>
+  // <Provider store={store}>
+
+  // <Chat />
+  <VideoCall />
+  // </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
