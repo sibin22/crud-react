@@ -1,4 +1,3 @@
-// src/VideoCall.js
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Stomp } from "@stomp/stompjs";
 import SockJS from "sockjs-client";
@@ -86,7 +85,7 @@ const VideoCall = () => {
 
   const sendSignalMessage = useCallback(
     (message) => {
-      if (stompClient) {
+      if (stompClient && stompClient.connected) {
         stompClient.send(
           "/app/signal",
           {},
@@ -118,7 +117,7 @@ const VideoCall = () => {
 
   return (
     <div>
-      <div>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <video ref={localVideoRef} autoPlay muted style={{ width: "300px" }} />
         <video ref={remoteVideoRef} autoPlay style={{ width: "300px" }} />
       </div>
